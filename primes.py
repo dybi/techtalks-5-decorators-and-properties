@@ -1,7 +1,7 @@
 from decorators import execution_timer, execution_counter, sleeper
 
 
-@sleeper(60)
+@sleeper(5)
 def is_prime(number):
     """Return True if *number* is prime."""
     if number <= 1:
@@ -26,8 +26,8 @@ def print_next_prime(number):
             print(index)
             break
 
-
-print_next_prime(35)
-print()
-print_next_prime(11123)
+if __name__ == "_main__":
+    print_next_prime(35)
+    print()
+    print_next_prime(11123)
 
