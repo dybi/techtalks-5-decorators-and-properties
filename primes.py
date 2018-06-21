@@ -1,4 +1,4 @@
-from datetime import datetime
+from decorators import execution_timer
 
 
 def is_prime(number):
@@ -15,16 +15,15 @@ def is_prime(number):
 
 def print_next_prime(number):
     """Print the closest prime number larger than *number*."""
-
-    start = datetime.now()
     index = number
     while True:
         index += 1
         if is_prime(index):
             print(index)
             break
-    stop = datetime.now()
-    print(f"Execution time: {(stop-start).microseconds} microseconds")
+
+
+print_next_prime = execution_timer(print_next_prime)
 
 
 print_next_prime(35)
