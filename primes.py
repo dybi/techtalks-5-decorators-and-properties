@@ -1,4 +1,4 @@
-from decorators import execution_timer, execution_counter
+from decorators import execution_timer, execution_counter, sleeper
 
 
 def is_prime(number):
@@ -13,6 +13,7 @@ def is_prime(number):
     return True
 
 
+@sleeper
 @execution_counter
 @execution_timer
 def print_next_prime(number):
