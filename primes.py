@@ -1,4 +1,4 @@
-from decorators import execution_timer
+from decorators import execution_timer, execution_counter
 
 
 def is_prime(number):
@@ -14,6 +14,7 @@ def is_prime(number):
 
 
 @execution_timer
+@execution_counter
 def print_next_prime(number):
     """Print the closest prime number larger than *number*."""
     index = number
@@ -25,6 +26,6 @@ def print_next_prime(number):
 
 
 print_next_prime(35)
-
+print()
 print_next_prime(11123)
 
