@@ -13,7 +13,7 @@ def is_prime(number):
     return True
 
 
-@sleeper
+@sleeper(1)
 @execution_counter
 @execution_timer
 def print_next_prime(number):

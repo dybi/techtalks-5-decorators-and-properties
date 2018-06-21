@@ -3,14 +3,15 @@ from functools import wraps
 from time import sleep
 
 
-def sleeper(fun):
-    @wraps(fun)
-    def wrapper(*args, **kwargs):
-        seconds = 2
-        print(f"Going to sleep for {seconds} seconds!")
-        sleep(seconds)
-        return fun(*args, **kwargs)
-    return wrapper
+def sleeper(seconds):
+    def inner(fun):
+        @wraps(fun)
+        def wrapper(*args, **kwargs):
+            print(f"Going to sleep for {seconds} seconds!")
+            sleep(seconds)
+            return fun(*args, **kwargs)
+        return wrapper
+    return inner
 
 
 def execution_timer(fun):
