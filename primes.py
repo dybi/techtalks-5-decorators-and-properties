@@ -1,6 +1,7 @@
 from decorators import execution_timer, execution_counter, sleeper
 
 
+@sleeper(60)
 def is_prime(number):
     """Return True if *number* is prime."""
     if number <= 1:
