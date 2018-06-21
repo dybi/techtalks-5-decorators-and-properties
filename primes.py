@@ -13,6 +13,7 @@ def is_prime(number):
     return True
 
 
+@execution_timer
 def print_next_prime(number):
     """Print the closest prime number larger than *number*."""
     index = number
@@ -21,9 +22,6 @@ def print_next_prime(number):
         if is_prime(index):
             print(index)
             break
-
-
-print_next_prime = execution_timer(print_next_prime)
 
 
 print_next_prime(35)
