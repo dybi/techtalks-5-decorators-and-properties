@@ -1,7 +1,9 @@
 from datetime import datetime
+from functools import wraps
 
 
 def execution_timer(fun):
+    @wraps(fun)
     def inner(*args, **kwargs):
         start = datetime.now()
         result = fun(*args, **kwargs)
@@ -12,6 +14,7 @@ def execution_timer(fun):
 
 
 def execution_counter(fun):
+    @wraps(fun)
     def wrapper(*args, **kwargs):
         result = fun(*args, **kwargs)
         wrapper.counter += 1
