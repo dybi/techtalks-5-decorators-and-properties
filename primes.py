@@ -13,8 +13,8 @@ def is_prime(number):
     return True
 
 
-@execution_timer
 @execution_counter
+@execution_timer
 def print_next_prime(number):
     """Print the closest prime number larger than *number*."""
     index = number
